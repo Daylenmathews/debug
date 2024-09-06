@@ -41,7 +41,7 @@ public class ArraySet<T> implements SimpleSet<T> {
 
     @Override
     public boolean isEmpty() {
-        return (rear > 0);
+        return (rear == 0);
     }
 
     @Override
@@ -61,6 +61,7 @@ public class ArraySet<T> implements SimpleSet<T> {
                 expandCapacity();
             }
             setArray[rear] = element;
+            rear++;
         }
     }
 
@@ -74,6 +75,7 @@ public class ArraySet<T> implements SimpleSet<T> {
                 retVal = setArray[i];
                 //shift all following elements one space forward
                 //so there are no gaps in the array
+                expandCapacity();
                 while (i < rear) {
                     setArray[i] = setArray[i + 1];
                     i++;

@@ -1,1 +1,29 @@
+Bug 1:
+Ran SetTester.java
+emptySet_testIsEmpty fails
+Set breakpoint at line 112 where emptySet_testIsEmpty is ran
+Stepped into the ArraySet constructor where there was no problems
+Stepped into testIsempty and into ArraySet isEmpty()
+Found return on line 44 which has rear > 0 which would not be true with an Empty ArraySet
+Then created an if-else statement where if rear == 0 return true, anything else false
+Reran tester - emptySet_testIsEmpty now is valid and passes
+
+Bug 2:
+Ran SetTester.java from handout files
+emptySet_addA_A_testIsEmpty fails
+Set breakpoint on line 147 where emptySet_addA_A_testIsEmpty is being Ran
+Stepped into the array set constructor where there was no problems
+Stepped into line 134 of SetTester to get element T method
+Found that setArray is containing the value for Int A but the rear did not equal Int ArraySet
+On line 63 I put rear++ at the end of the code to set the rear equal to the number of eleemnts in the ArraySet
+Reran tester - emptySet_addA_A_testIsEmpty now passes
+
+Bug 3:
+Ran SetTester.java from handout files
+testRemove fails with ArrayIndexOutOfBoundsException
+I set the breakpoint on line 262 because the terminal told me the test A_addB_AB_testRemoveA was failing
+I then stepped through adding elements to the ArraySet where there was no problems 
+Then I stepped through to line 591 of the Set Tester to which I then stepped to line 71 of the ArraySet which is the method to remove a number in the ArraySet
+On line 78 I added the expandCapacity method because it doubles the size of the array and there will no longer be ArrayIndexOutOfBoundsException
+Reran tester - testRemove Passes 
 
